@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ElectricShieldP 1",
+    "texture": "4d4c1098-450e-4816-a87c-1b17bc0cd0e6",
+    "atlas": "",
+    "rect": [
+      6,
+      8,
+      234,
+      228
+    ],
+    "offset": [
+      1,
+      0
+    ],
+    "originalSize": [
+      244,
+      244
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

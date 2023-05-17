@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "1280px-White_box_55x90",
+    "texture": "6ebde845-3b01-4a71-987a-f2c286c69d94",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      1280,
+      782
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      1280,
+      782
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Wing 1",
+    "texture": "8b48e394-0ebc-4c5d-9516-dd26863f050c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      38,
+      60
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      38,
+      60
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

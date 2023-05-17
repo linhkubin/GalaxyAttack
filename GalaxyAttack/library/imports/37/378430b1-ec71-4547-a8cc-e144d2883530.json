@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Sparkle03",
+    "texture": "98ee96c8-135b-4a2c-ac16-6a1e529b209f",
+    "atlas": "",
+    "rect": [
+      8,
+      4,
+      100,
+      96
+    ],
+    "offset": [
+      4,
+      2
+    ],
+    "originalSize": [
+      108,
+      108
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

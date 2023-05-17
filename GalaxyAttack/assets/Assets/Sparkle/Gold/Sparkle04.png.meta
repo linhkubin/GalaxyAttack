@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "96ba2a25-a043-4a27-8c23-d4cbd0bb32f6",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 108,
+  "height": 108,
+  "platformSettings": {},
+  "subMetas": {
+    "Sparkle04": {
+      "ver": "1.0.4",
+      "uuid": "a97ddc8b-67bb-49b1-b345-fbfcf09c4377",
+      "rawTextureUuid": "96ba2a25-a043-4a27-8c23-d4cbd0bb32f6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 2,
+      "offsetY": 2,
+      "trimX": 4,
+      "trimY": 0,
+      "width": 104,
+      "height": 104,
+      "rawWidth": 108,
+      "rawHeight": 108,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

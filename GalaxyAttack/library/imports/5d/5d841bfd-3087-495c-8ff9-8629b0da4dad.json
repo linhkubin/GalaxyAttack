@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "shockwave3x3_ripples",
+    "texture": "f47a9dc8-6af0-4a3e-a66a-2952027b7467",
+    "atlas": "",
+    "rect": [
+      17,
+      5,
+      991,
+      999
+    ],
+    "offset": [
+      0.5,
+      7.5
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

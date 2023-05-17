@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "glow_colored_fast",
+    "texture": "5653ea58-1db3-42e2-a712-d6abd910348e",
+    "atlas": "",
+    "rect": [
+      0,
+      19,
+      256,
+      217
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

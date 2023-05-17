@@ -1,0 +1,105 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "Enemy_Idle",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.6666666666666666,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "paths": {
+      "Jaw": {
+        "props": {
+          "y": [
+            {
+              "frame": 0,
+              "value": -53.74
+            },
+            {
+              "frame": 0.25,
+              "value": -58.759
+            },
+            {
+              "frame": 0.5,
+              "value": -53.74
+            }
+          ]
+        }
+      },
+      "Local Feeler Head L": {
+        "props": {
+          "angle": [
+            {
+              "frame": 0,
+              "value": 15
+            },
+            {
+              "frame": 0.25,
+              "value": 0
+            },
+            {
+              "frame": 0.5,
+              "value": 15
+            }
+          ]
+        }
+      },
+      "Local Feeler Head R": {
+        "props": {
+          "angle": [
+            {
+              "frame": 0,
+              "value": -15
+            },
+            {
+              "frame": 0.25,
+              "value": 0
+            },
+            {
+              "frame": 0.5,
+              "value": -15
+            }
+          ]
+        }
+      },
+      "Feeler L": {
+        "props": {
+          "angle": [
+            {
+              "frame": 0.08333333333333333,
+              "value": 15
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": 10
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": 15
+            }
+          ]
+        }
+      },
+      "Feeler R": {
+        "props": {
+          "angle": [
+            {
+              "frame": 0.08333333333333333,
+              "value": -15
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": -10
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": -15
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "RedTailBulletSuper",
+    "texture": "5314647b-c3fb-4fe4-807c-4cac118ea6c8",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      52,
+      148
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      52,
+      148
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

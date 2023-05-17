@@ -1,0 +1,50 @@
+{
+  "group-list": [
+    "default",
+    "enemy",
+    "player"
+  ],
+  "collision-matrix": [
+    [
+      false,
+      true,
+      false
+    ],
+    [
+      true,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false
+    ]
+  ],
+  "excluded-modules": [
+    "3D Physics/Builtin"
+  ],
+  "preview-port": 7456,
+  "design-resolution-width": 1080,
+  "design-resolution-height": 1920,
+  "fit-width": false,
+  "fit-height": true,
+  "use-project-simulator-setting": true,
+  "simulator-orientation": false,
+  "use-customize-simulator": true,
+  "simulator-resolution": {
+    "height": 1920,
+    "width": 1080
+  },
+  "clear-simulator-cache": true,
+  "facebook": {
+    "appID": "",
+    "audience": {
+      "enable": false
+    },
+    "enable": false,
+    "live": {
+      "enable": false
+    }
+  }
+}

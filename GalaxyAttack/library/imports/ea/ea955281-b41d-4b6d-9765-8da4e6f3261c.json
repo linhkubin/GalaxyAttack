@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Valiant_E9",
+    "texture": "6c2241bb-9ae8-42cd-bdcd-03fe8916294a",
+    "atlas": "",
+    "rect": [
+      23,
+      20,
+      210,
+      213
+    ],
+    "offset": [
+      0,
+      1.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

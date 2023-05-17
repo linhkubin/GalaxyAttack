@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "tile010",
+    "texture": "4eccf898-4d87-4f81-b32a-d7dd9465ed02",
+    "atlas": "",
+    "rect": [
+      0,
+      3,
+      192,
+      189
+    ],
+    "offset": [
+      0,
+      -1.5
+    ],
+    "originalSize": [
+      192,
+      192
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

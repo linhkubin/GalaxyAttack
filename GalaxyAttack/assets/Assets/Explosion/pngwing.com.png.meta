@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "b4e84e73-2cd2-4dbf-a876-94c1e261eea9",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1920,
+  "height": 1440,
+  "platformSettings": {},
+  "subMetas": {
+    "pngwing.com": {
+      "ver": "1.0.4",
+      "uuid": "afbc6b27-2373-4575-9fae-c9f92cd9be56",
+      "rawTextureUuid": "b4e84e73-2cd2-4dbf-a876-94c1e261eea9",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": -5,
+      "trimX": 1,
+      "trimY": 28,
+      "width": 1919,
+      "height": 1394,
+      "rawWidth": 1920,
+      "rawHeight": 1440,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

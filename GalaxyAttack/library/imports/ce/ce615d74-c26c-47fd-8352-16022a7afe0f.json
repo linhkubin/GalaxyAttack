@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Circle_contaryball",
+    "texture": "6bcc5a54-9543-4557-ad7d-ecf12296bf1c",
+    "atlas": "",
+    "rect": [
+      8,
+      8,
+      112,
+      112
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      128,
+      128
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

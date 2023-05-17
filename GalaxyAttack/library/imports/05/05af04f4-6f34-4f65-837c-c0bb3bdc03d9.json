@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "RedTailOverload",
+    "texture": "28d65049-5529-4a45-a558-114b6fc0e064",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      34,
+      141
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      34,
+      141
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

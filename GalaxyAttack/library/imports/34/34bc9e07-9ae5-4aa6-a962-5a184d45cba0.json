@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "logo_down",
+    "texture": "79ad548f-8bc1-46fa-9f78-8cceb65643a8",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      316,
+      124
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      316,
+      124
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

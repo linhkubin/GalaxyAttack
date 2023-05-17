@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "fx_levelEndFocus",
+    "texture": "0136bfec-f965-4524-8374-b0cde626c196",
+    "atlas": "",
+    "rect": [
+      4,
+      4,
+      208,
+      140
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      216,
+      148
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

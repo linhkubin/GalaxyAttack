@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Jaw",
+    "texture": "689f29a0-e7b5-48f9-ba36-e61ed3a0f048",
+    "atlas": "",
+    "rect": [
+      0,
+      1,
+      31,
+      22
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      32,
+      24
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

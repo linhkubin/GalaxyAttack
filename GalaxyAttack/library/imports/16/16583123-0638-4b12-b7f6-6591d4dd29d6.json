@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Feeler2",
+    "texture": "e7999e65-9cb2-4cec-843e-0f77e46df067",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      32,
+      47
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      32,
+      48
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

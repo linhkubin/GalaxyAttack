@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "laserballred",
+    "texture": "a07baf99-77ab-4856-a969-d7c2f9486219",
+    "atlas": "",
+    "rect": [
+      98,
+      98,
+      316,
+      316
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

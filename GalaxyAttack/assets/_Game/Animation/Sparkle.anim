@@ -1,0 +1,61 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "Sparkle",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.26666666666666666,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "86bb5e09-6b1e-43c0-91a1-43a36c8edd9f"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "55bf12a1-8ad1-4d15-93b7-3b7a32c9060e"
+            }
+          },
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "5e7e13d7-228e-4784-aa52-4dcb9d75d237"
+            }
+          },
+          {
+            "frame": 0.15,
+            "value": {
+              "__uuid__": "378430b1-ec71-4547-a8cc-e144d2883530"
+            }
+          },
+          {
+            "frame": 0.2,
+            "value": {
+              "__uuid__": "a97ddc8b-67bb-49b1-b345-fbfcf09c4377"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "726a7c6f-3464-4a2c-a5bd-ec17b4fff901"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "frame": 0.26666666666666666,
+      "func": "Despawn_Effect",
+      "params": []
+    }
+  ]
+}
