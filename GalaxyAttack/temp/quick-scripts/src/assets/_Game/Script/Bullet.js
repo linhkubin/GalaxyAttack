@@ -29,6 +29,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var Character_1 = require("./Character");
 var PoolMember_1 = require("./Pool/PoolMember");
 var SimplePool_1 = require("./Pool/SimplePool");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
@@ -56,16 +57,15 @@ var Bullet = /** @class */ (function (_super) {
     };
     // Despawn bullet if col with enemy
     Bullet.prototype.onCollisionEnter = function (other, self) {
-        if (other.node.group === 'enemy') {
+        if (other.node.group == 'enemy') {
             //     // spawn a Sparkle 
             //     // const Sparkle = SparklePool.getInstance().getSparkle();
             //     // Sparkle.setPosition(this.node.position);
             //     // Sparkle.setParent(GameManager.getInstance().Explosion_Hold);
             //     //TODO: test
-            //     other.getComponent(Character).onHit(this.damage);
+            other.getComponent(Character_1.default).onHit(this.damage);
             SimplePool_1.default.despawn(this);
         }
-        console.log("contact");
     };
     __decorate([
         property

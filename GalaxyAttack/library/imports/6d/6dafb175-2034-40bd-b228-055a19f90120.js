@@ -29,15 +29,53 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var SimplePool_1 = require("./Pool/SimplePool");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var LevelManager = /** @class */ (function (_super) {
     __extends(LevelManager, _super);
     function LevelManager() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        //
+        _this.list = [];
+        _this.stage_1 = [];
+        return _this;
     }
+    LevelManager_1 = LevelManager;
+    Object.defineProperty(LevelManager, "Ins", {
+        get: function () {
+            return LevelManager_1.ins;
+        },
+        enumerable: false,
+        configurable: true
+    });
     LevelManager.prototype.onLoad = function () {
+        LevelManager_1.ins = this;
     };
-    LevelManager = __decorate([
+    LevelManager.prototype.start = function () {
+        for (var i = 0; i < this.stage_1.length; i++) {
+            var e = SimplePool_1.default.spawnT(SimplePool_1.PoolType.Enemy_1, this.stage_1[i].getWorldPosition().add(cc.Vec3.UP.mul(1000)), 0);
+            e.moveTo(this.stage_1[i].getWorldPosition(), 1, true);
+            this.list.push(e);
+            e.onInit(10);
+        }
+    };
+    LevelManager.prototype.onLoadStage = function (stage) {
+    };
+    LevelManager.prototype.onEnemyDeath = function (c) {
+        var index = this.list.indexOf(c);
+        if (index != -1) {
+            this.list.splice(index, 1);
+        }
+        console.log(this.list.length);
+        if (this.list.length == 0) {
+            console.log("Done");
+        }
+    };
+    var LevelManager_1;
+    __decorate([
+        property(cc.Node)
+    ], LevelManager.prototype, "stage_1", void 0);
+    LevelManager = LevelManager_1 = __decorate([
         ccclass
     ], LevelManager);
     return LevelManager;

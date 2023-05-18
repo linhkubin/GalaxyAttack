@@ -30,15 +30,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var Character_1 = require("./Character");
+var LevelManager_1 = require("./LevelManager");
+var SimplePool_1 = require("./Pool/SimplePool");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var Enemy = /** @class */ (function (_super) {
     __extends(Enemy, _super);
     function Enemy() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    //nhận damage
     Enemy.prototype.onHit = function (damage) {
-        // super.onHit(damage);
-        console.log("hit");
+        _super.prototype.onHit.call(this, damage);
+        // console.log("hit");
+    };
+    //enemy death sẽ đưa nó về pool
+    Enemy.prototype.onDeath = function () {
+        // super.onDeath();
+        LevelManager_1.default.Ins.onEnemyDeath(this);
+        SimplePool_1.default.despawn(this);
+    };
+    //hàm di chuyển sang vị trí mới
+    Enemy.prototype.moveTo = function (target, duration, isWorldSpace) {
+        // Lấy vị trí target position của node
+        var targetPosition = isWorldSpace ? this.node.getLocalPosition(target) : target;
+        // Tạo một tween để di chuyển node từ vị trí hiện tại đến vị trí mới (position)
+        cc.tween(this.node)
+            .to(duration, { position: targetPosition }, { easing: "linear", })
+            .start();
     };
     Enemy = __decorate([
         ccclass

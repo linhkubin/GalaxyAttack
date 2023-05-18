@@ -29,6 +29,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var PoolMember_1 = require("./Pool/PoolMember");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var Character = /** @class */ (function (_super) {
     __extends(Character, _super);
@@ -36,6 +37,8 @@ var Character = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(Character.prototype, "isDead", {
+        //khai bao action
+        // public onDeathAction: (c:Character) => void;
         //getter
         get: function () {
             return this.hp <= 0;
@@ -43,22 +46,27 @@ var Character = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
+    //khởi tạo
     Character.prototype.onInit = function (hp) {
         this.hp = hp;
     };
+    //nhận damage
     Character.prototype.onHit = function (damage) {
         if (!this.isDead) {
             this.hp -= damage;
             if (this.isDead) {
-                this.onDeathAction(this);
+                this.onDeath();
             }
         }
+    };
+    Character.prototype.onDeath = function () {
+        // this.onDeathAction(this);
     };
     Character = __decorate([
         ccclass
     ], Character);
     return Character;
-}(cc.Component));
+}(PoolMember_1.default));
 exports.default = Character;
 
 cc._RF.pop();

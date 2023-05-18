@@ -9,6 +9,7 @@
 declare module cc {
   export interface Node {
     getWorldPosition(): cc.Vec3;
+    getLocalPosition(pos: cc.Vec3): cc.Vec3;
     setWorldPosition(pos: cc.Vec3): void;
   }
 }
@@ -21,8 +22,15 @@ cc.Node.prototype.getWorldPosition = function (): cc.Vec3 {
 };
 
 // Đặt giá trị world position cho node
-cc.Node.prototype.setWorldPosition = function (pos: cc.Vec3) {
+cc.Node.prototype.setWorldPosition = function (worldPosition: cc.Vec3) {
     //this ở đây là node luôn
-    const localPos = this.parent?.convertToNodeSpaceAR(pos);
+    const localPos = this.parent?.convertToNodeSpaceAR(worldPosition);
     this.position = localPos;
+};
+
+ // Lấy giá trị local position của node
+cc.Node.prototype.getLocalPosition = function (worldPosition: cc.Vec3): cc.Vec3 {
+    //this ở đây là node luôn
+    const localPosition = this.parent?.convertToNodeSpaceAR(worldPosition);
+    return localPosition;
 };

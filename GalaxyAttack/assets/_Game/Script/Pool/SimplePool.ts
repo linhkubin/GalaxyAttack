@@ -12,6 +12,8 @@ export enum PoolType {
     None = 0,
     Bullet_1 = 1, 
     Bullet_2 = 2,
+    Enemy_1 = 10,
+    Enemy_2 = 11,
 }
 
 @ccclass

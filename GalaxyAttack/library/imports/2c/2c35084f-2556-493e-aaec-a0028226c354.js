@@ -15,11 +15,18 @@ cc.Node.prototype.getWorldPosition = function () {
     return worldPos;
 };
 // Đặt giá trị world position cho node
-cc.Node.prototype.setWorldPosition = function (pos) {
+cc.Node.prototype.setWorldPosition = function (worldPosition) {
     var _a;
     //this ở đây là node luôn
-    var localPos = (_a = this.parent) === null || _a === void 0 ? void 0 : _a.convertToNodeSpaceAR(pos);
+    var localPos = (_a = this.parent) === null || _a === void 0 ? void 0 : _a.convertToNodeSpaceAR(worldPosition);
     this.position = localPos;
+};
+// Lấy giá trị local position của node
+cc.Node.prototype.getLocalPosition = function (worldPosition) {
+    var _a;
+    //this ở đây là node luôn
+    var localPosition = (_a = this.parent) === null || _a === void 0 ? void 0 : _a.convertToNodeSpaceAR(worldPosition);
+    return localPosition;
 };
 
 cc._RF.pop();

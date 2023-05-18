@@ -24,6 +24,8 @@ var PoolType;
     PoolType[PoolType["None"] = 0] = "None";
     PoolType[PoolType["Bullet_1"] = 1] = "Bullet_1";
     PoolType[PoolType["Bullet_2"] = 2] = "Bullet_2";
+    PoolType[PoolType["Enemy_1"] = 10] = "Enemy_1";
+    PoolType[PoolType["Enemy_2"] = 11] = "Enemy_2";
 })(PoolType = exports.PoolType || (exports.PoolType = {}));
 var SimplePool = /** @class */ (function () {
     function SimplePool() {

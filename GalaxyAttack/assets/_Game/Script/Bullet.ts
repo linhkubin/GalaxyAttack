@@ -39,17 +39,15 @@ export default class Bullet extends PoolMember {
     // Despawn bullet if col with enemy
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
 
-        if (other.node.group === 'enemy') {
+        if (other.node.group == 'enemy') {
         //     // spawn a Sparkle 
         //     // const Sparkle = SparklePool.getInstance().getSparkle();
         //     // Sparkle.setPosition(this.node.position);
         //     // Sparkle.setParent(GameManager.getInstance().Explosion_Hold);
         //     //TODO: test
-        //     other.getComponent(Character).onHit(this.damage);
+            other.getComponent(Character).onHit(this.damage);
             SimplePool.despawn(this);
         }
-
-        console.log("contact");
     }
 
 }
