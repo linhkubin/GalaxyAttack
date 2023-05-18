@@ -88,6 +88,14 @@ var Ship = /** @class */ (function (_super) {
             SimplePool_1.default.spawn(SimplePool_1.PoolType.Bullet_1, this.bulletPoints[i].getWorldPosition(), this.bulletPoints[i].angle).onInit(10);
         }
     };
+    Ship.prototype.onLevelUp = function () {
+    };
+    Ship.prototype.onShield = function () {
+    };
+    Ship.prototype.onStart = function () {
+    };
+    Ship.prototype.onFinish = function () {
+    };
     __decorate([
         property(cc.Label)
     ], Ship.prototype, "label", void 0);

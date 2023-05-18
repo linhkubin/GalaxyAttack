@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '5ffb8Wz4pFDzIyiVTrkEw0C', 'BGScroll');
-// Script/BGScroll.ts
+// _Game/Script/BGScroll.ts
 
 "use strict";
 // Learn TypeScript:

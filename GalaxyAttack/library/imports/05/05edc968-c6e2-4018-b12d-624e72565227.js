@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '05edcloxuJAGLEtYk5yVlIn', 'Utilities');
-// Script/Utilities.ts
+// _Game/Script/Utilities.ts
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {

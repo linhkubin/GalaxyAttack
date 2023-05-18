@@ -97,4 +97,19 @@ export default class Ship extends cc.Component {
     }
   }
 
+  public onLevelUp(): void {
+     
+  }
+
+  public onShield(): void {
+    
+  }
+
+  public onStart(): void {
+    
+  }
+
+  public onFinish(): void {
+    
+  }
 }
