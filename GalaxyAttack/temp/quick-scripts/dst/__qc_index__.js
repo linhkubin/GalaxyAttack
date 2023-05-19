@@ -21,6 +21,7 @@ require('./assets/_Game/Script/Pool/PoolMember');
 require('./assets/_Game/Script/Pool/SimplePool');
 require('./assets/_Game/Script/Ship');
 require('./assets/_Game/Script/Utilities');
+require('./assets/_Game/Script/VFX');
 require('./assets/_Game/Script/ccExtension');
 
                     }

@@ -7,7 +7,7 @@
 
 import Character from "./Character";
 import LevelManager from "./LevelManager";
-import SimplePool from "./Pool/SimplePool";
+import SimplePool, { PoolType } from "./Pool/SimplePool";
 
 const {ccclass, property} = cc._decorator;
 
@@ -24,6 +24,7 @@ export default class Enemy extends Character {
     protected onDeath(){
         // super.onDeath();
         LevelManager.Ins.onEnemyDeath(this);
+        SimplePool.spawn(PoolType.VFX_Explore, this.node.getWorldPosition(), 0);
         SimplePool.despawn(this);
     }
 

@@ -47,6 +47,7 @@ var Enemy = /** @class */ (function (_super) {
     Enemy.prototype.onDeath = function () {
         // super.onDeath();
         LevelManager_1.default.Ins.onEnemyDeath(this);
+        SimplePool_1.default.spawn(SimplePool_1.PoolType.VFX_Explore, this.node.getWorldPosition(), 0);
         SimplePool_1.default.despawn(this);
     };
     //hàm di chuyển sang vị trí mới

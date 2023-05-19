@@ -26,6 +26,7 @@ var PoolType;
     PoolType[PoolType["Bullet_2"] = 2] = "Bullet_2";
     PoolType[PoolType["Enemy_1"] = 10] = "Enemy_1";
     PoolType[PoolType["Enemy_2"] = 11] = "Enemy_2";
+    PoolType[PoolType["VFX_Explore"] = 12] = "VFX_Explore";
 })(PoolType = exports.PoolType || (exports.PoolType = {}));
 var SimplePool = /** @class */ (function () {
     function SimplePool() {
@@ -49,6 +50,7 @@ var SimplePool = /** @class */ (function () {
         }
     };
     SimplePool.spawn = function (nodeType, pos, angle) {
+        console.log(nodeType);
         if (!this.isHasPool(nodeType))
             console.error(" NEED PRELOAD POOL : " + nodeType + "!!!");
         return this.getPool(nodeType).spawn(pos, angle);
