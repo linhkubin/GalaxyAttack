@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "Tut Move",
+    "_name": "UI_Tut Move",
     "_objFlags": 0,
     "_native": "",
     "data": {

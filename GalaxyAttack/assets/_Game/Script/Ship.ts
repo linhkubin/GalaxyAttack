@@ -14,14 +14,22 @@ const { ccclass, property } = cc._decorator;
 @ccclass
 export default class Ship extends cc.Component {
 
-  @property(cc.Label)
-  label: cc.Label = null;
-  
   @property({
     type: [cc.Node],
-    tooltip: 'bulletPoints'
+    tooltip: 'bulletPoints_1'
   })
-  public bulletPoints: cc.Node[] = [];
+  //list đạn ban đầu
+  public bulletPoints_1: cc.Node[] = [];
+
+  @property({
+    type: [cc.Node],
+    tooltip: 'bulletPoints_2'
+  })
+  //list đạn sau khi level up
+  public bulletPoints_2: cc.Node[] = [];
+
+  //list đạn bắn ra  
+  private bulletPoints : cc.Node[] = [];
 
   // private player: cc.Node;
   private touchOffset: cc.Vec2;
@@ -40,6 +48,8 @@ export default class Ship extends cc.Component {
     this.screen = new cc.Vec2(cc.view.getVisibleSize().width, cc.view.getVisibleSize().height);
     this.clampHorizon = new cc.Vec2(-0.5, 0.5).mul(this.screen.x);
     this.clampVertical = new cc.Vec2(-0.5, 0.5).mul(this.screen.y);
+
+    this.bulletPoints = this.bulletPoints_1;
   }
 
   
@@ -72,12 +82,6 @@ export default class Ship extends cc.Component {
 
   //------------------------------
 
-  @property(cc.Node)
-  target: cc.Node = null;
-    
-  @property(cc.Node)
-  follow: cc.Node = null;
-
   private timer: number = 0;
 
   update(dt: number) {
@@ -88,7 +92,6 @@ export default class Ship extends cc.Component {
     }
 
     this.timer -= dt;
-    this.follow.setWorldPosition(this.target.getWorldPosition());
   }
 
   private shoot(){
@@ -97,8 +100,8 @@ export default class Ship extends cc.Component {
     }
   }
 
-  public onLevelUp(): void {
-     
+  public onPowerUp(): void {
+    this.bulletPoints = this.bulletPoints_2;
   }
 
   public onShield(): void {

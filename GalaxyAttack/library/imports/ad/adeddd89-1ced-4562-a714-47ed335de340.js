@@ -36,12 +36,12 @@ var Ship = /** @class */ (function (_super) {
     __extends(Ship, _super);
     function Ship() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.label = null;
+        _this.bulletPoints_1 = [];
+        _this.bulletPoints_2 = [];
+        //list đạn bắn ra  
         _this.bulletPoints = [];
         _this.screen = new cc.Vec2(cc.view.getVisibleSize().width, cc.view.getVisibleSize().height);
         //------------------------------
-        _this.target = null;
-        _this.follow = null;
         _this.timer = 0;
         return _this;
     }
@@ -53,6 +53,7 @@ var Ship = /** @class */ (function (_super) {
         this.screen = new cc.Vec2(cc.view.getVisibleSize().width, cc.view.getVisibleSize().height);
         this.clampHorizon = new cc.Vec2(-0.5, 0.5).mul(this.screen.x);
         this.clampVertical = new cc.Vec2(-0.5, 0.5).mul(this.screen.y);
+        this.bulletPoints = this.bulletPoints_1;
     };
     Ship.prototype.onDestroy = function () {
         this.node.off(cc.Node.EventType.TOUCH_START, this.onTouchBegan, this);
@@ -81,14 +82,14 @@ var Ship = /** @class */ (function (_super) {
             this.shoot();
         }
         this.timer -= dt;
-        this.follow.setWorldPosition(this.target.getWorldPosition());
     };
     Ship.prototype.shoot = function () {
         for (var i = 0; i < this.bulletPoints.length; i++) {
             SimplePool_1.default.spawn(SimplePool_1.PoolType.Bullet_1, this.bulletPoints[i].getWorldPosition(), this.bulletPoints[i].angle).onInit(10);
         }
     };
-    Ship.prototype.onLevelUp = function () {
+    Ship.prototype.onPowerUp = function () {
+        this.bulletPoints = this.bulletPoints_2;
     };
     Ship.prototype.onShield = function () {
     };
@@ -97,20 +98,17 @@ var Ship = /** @class */ (function (_super) {
     Ship.prototype.onFinish = function () {
     };
     __decorate([
-        property(cc.Label)
-    ], Ship.prototype, "label", void 0);
+        property({
+            type: [cc.Node],
+            tooltip: 'bulletPoints_1'
+        })
+    ], Ship.prototype, "bulletPoints_1", void 0);
     __decorate([
         property({
             type: [cc.Node],
-            tooltip: 'bulletPoints'
+            tooltip: 'bulletPoints_2'
         })
-    ], Ship.prototype, "bulletPoints", void 0);
-    __decorate([
-        property(cc.Node)
-    ], Ship.prototype, "target", void 0);
-    __decorate([
-        property(cc.Node)
-    ], Ship.prototype, "follow", void 0);
+    ], Ship.prototype, "bulletPoints_2", void 0);
     Ship = __decorate([
         ccclass
     ], Ship);

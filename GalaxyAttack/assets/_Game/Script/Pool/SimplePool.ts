@@ -15,6 +15,8 @@ export enum PoolType {
     Enemy_1 = 10,
     Enemy_2 = 11,
     VFX_Explore = 12,
+    VFX_Spark  = 13,
+    Booster  = 14,
 }
 
 @ccclass
@@ -45,7 +47,7 @@ export default class SimplePool {
         }
     }
 
-    static spawn(nodeType: PoolType, pos: cc.Vec3, angle: number): PoolMember {
+    static spawn(nodeType: PoolType, pos: cc.Vec3, angle: number = 0): PoolMember {
         console.log(nodeType);
         if(!this.isHasPool(nodeType)) console.error(" NEED PRELOAD POOL : " + nodeType + "!!!");
         return this.getPool(nodeType).spawn(pos, angle);

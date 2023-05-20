@@ -30,12 +30,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var SimplePool_1 = require("./Pool/SimplePool");
+var Ship_1 = require("./Ship");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var LevelManager = /** @class */ (function (_super) {
     __extends(LevelManager, _super);
     function LevelManager() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         //
+        _this.ship = null;
         _this.list = [];
         _this.stage_1 = [];
         return _this;
@@ -56,7 +58,7 @@ var LevelManager = /** @class */ (function (_super) {
             var e = SimplePool_1.default.spawnT(SimplePool_1.PoolType.Enemy_1, this.stage_1[i].getWorldPosition().add(cc.Vec3.UP.mul(1000)), 0);
             e.moveTo(this.stage_1[i].getWorldPosition(), 1, true);
             this.list.push(e);
-            e.onInit(10);
+            e.onInit(40);
         }
     };
     LevelManager.prototype.onLoadStage = function (stage) {
@@ -72,6 +74,9 @@ var LevelManager = /** @class */ (function (_super) {
         }
     };
     var LevelManager_1;
+    __decorate([
+        property(Ship_1.default)
+    ], LevelManager.prototype, "ship", void 0);
     __decorate([
         property(cc.Node)
     ], LevelManager.prototype, "stage_1", void 0);

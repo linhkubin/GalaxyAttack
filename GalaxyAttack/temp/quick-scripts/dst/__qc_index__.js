@@ -11,6 +11,7 @@
                     function __define (exports, require, module) {
                         if (!nodeEnv) {__quick_compile_project__.registerModule(__filename, module);}
 require('./assets/_Game/Script/BGScroll');
+require('./assets/_Game/Script/Booster');
 require('./assets/_Game/Script/Bullet');
 require('./assets/_Game/Script/Character');
 require('./assets/_Game/Script/CollisionManager');

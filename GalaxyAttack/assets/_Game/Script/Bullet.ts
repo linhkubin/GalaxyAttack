@@ -7,7 +7,7 @@
 
 import Character from "./Character";
 import PoolMember from "./Pool/PoolMember";
-import SimplePool from "./Pool/SimplePool";
+import SimplePool, { PoolType } from "./Pool/SimplePool";
 
 const {ccclass, property} = cc._decorator;
 
@@ -38,16 +38,13 @@ export default class Bullet extends PoolMember {
 
     // Despawn bullet if col with enemy
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
-
-        if (other.node.group == 'enemy') {
-        //     // spawn a Sparkle 
-        //     // const Sparkle = SparklePool.getInstance().getSparkle();
-        //     // Sparkle.setPosition(this.node.position);
-        //     // Sparkle.setParent(GameManager.getInstance().Explosion_Hold);
-        //     //TODO: test
-            other.getComponent(Character).onHit(this.damage);
-            SimplePool.despawn(this);
-        }
+        //đoạn này k cần so sánh group name vì đã chia group contact rồi
+        // if (other.node.group == 'enemy') {
+        //TODO: test
+        other.getComponent(Character).onHit(this.damage);
+        SimplePool.spawn(PoolType.VFX_Spark, this.node.getWorldPosition());
+        SimplePool.despawn(this);
+        // }
     }
 
 }

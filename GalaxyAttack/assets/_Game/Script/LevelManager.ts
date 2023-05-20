@@ -8,6 +8,7 @@
 import Character from "./Character";
 import Enemy from "./Enemy";
 import SimplePool, { PoolType } from "./Pool/SimplePool";
+import Ship from "./Ship";
 
 const {ccclass, property} = cc._decorator;
 
@@ -25,6 +26,10 @@ export default class LevelManager extends cc.Component {
       LevelManager.ins = this;
    }
    //
+
+   @property(Ship)
+   public ship: Ship = null;
+
    private list: Character[] = [];
 
    @property(cc.Node)
@@ -35,7 +40,7 @@ export default class LevelManager extends cc.Component {
          let e = SimplePool.spawnT<Enemy>(PoolType.Enemy_1, this.stage_1[i].getWorldPosition().add(cc.Vec3.UP.mul(1000)), 0);
          e.moveTo(this.stage_1[i].getWorldPosition(), 1, true);
          this.list.push(e);
-         e.onInit(10);
+         e.onInit(40);
       }
    }
 

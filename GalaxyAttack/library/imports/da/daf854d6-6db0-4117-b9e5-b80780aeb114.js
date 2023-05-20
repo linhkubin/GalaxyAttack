@@ -37,6 +37,7 @@ var VFX = /** @class */ (function (_super) {
     function VFX() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.anim = null;
+        _this.timeAlive = 1;
         return _this;
     }
     VFX.prototype.onEnable = function () {
@@ -46,11 +47,14 @@ var VFX = /** @class */ (function (_super) {
         //delay 0.5s thi despawn
         setTimeout(function () {
             SimplePool_1.default.despawn(_this);
-        }, 500);
+        }, this.timeAlive * 1000);
     };
     __decorate([
         property({ type: cc.Animation })
     ], VFX.prototype, "anim", void 0);
+    __decorate([
+        property({ type: cc.Float })
+    ], VFX.prototype, "timeAlive", void 0);
     VFX = __decorate([
         ccclass
     ], VFX);

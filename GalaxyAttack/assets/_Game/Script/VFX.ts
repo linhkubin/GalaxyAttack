@@ -16,6 +16,9 @@ export default class VFX extends PoolMember {
     @property({ type: cc.Animation })
     anim : cc.Animation = null;
 
+    @property({ type: cc.Float })
+    timeAlive : number = 1;
+
     protected onEnable(): void {
 
         this.anim.play();
@@ -24,6 +27,6 @@ export default class VFX extends PoolMember {
         //delay 0.5s thi despawn
         setTimeout(() => {
             SimplePool.despawn(this);
-        }, 500);
+        }, this.timeAlive * 1000);
     }
 }

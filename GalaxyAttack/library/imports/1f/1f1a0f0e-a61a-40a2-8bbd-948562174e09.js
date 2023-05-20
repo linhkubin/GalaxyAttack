@@ -57,6 +57,11 @@ var PoolControl = /** @class */ (function (_super) {
     __extends(PoolControl, _super);
     function PoolControl() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
+        // @property({
+        //     type: [PoolAmount],
+        //     displayName: "Custom Objects",
+        //     serializable: true,
+        // })
         _this.pools = [];
         return _this;
     }
@@ -82,11 +87,7 @@ var PoolControl = /** @class */ (function (_super) {
         // SimplePool.despawn(member);
     };
     __decorate([
-        property({
-            type: [PoolAmount],
-            displayName: "Custom Objects",
-            serializable: true,
-        })
+        property([PoolAmount])
     ], PoolControl.prototype, "pools", void 0);
     PoolControl = __decorate([
         ccclass
