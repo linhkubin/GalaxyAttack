@@ -34,10 +34,13 @@
     "_components": [
       {
         "__id__": 17
+      },
+      {
+        "__id__": 18
       }
     ],
     "_prefab": {
-      "__id__": 18
+      "__id__": 19
     },
     "_opacity": 255,
     "_color": {
@@ -82,8 +85,8 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
+    "_groupIndex": 3,
+    "groupIndex": 3,
     "_id": ""
   },
   {
@@ -595,6 +598,17 @@
       "y": 0
     },
     "_radius": 50,
+    "_id": ""
+  },
+  {
+    "__type__": "09b02JVHm9LUqtuvJ+3fRZy",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "poolType": 14,
     "_id": ""
   },
   {

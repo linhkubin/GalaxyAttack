@@ -36,7 +36,6 @@ var PoolMember = /** @class */ (function (_super) {
     function PoolMember() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.poolType = SimplePool_1.PoolType.None;
-        _this.i = 10;
         return _this;
     }
     __decorate([

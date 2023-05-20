@@ -40,7 +40,9 @@ var Ship = /** @class */ (function (_super) {
         _this.bulletPoints_2 = [];
         //list đạn bắn ra  
         _this.bulletPoints = [];
+        //giới hạn khu vực điều khiển
         _this.screen = new cc.Vec2(cc.view.getVisibleSize().width, cc.view.getVisibleSize().height);
+        _this.isShooting = false;
         //------------------------------
         _this.timer = 0;
         return _this;
@@ -76,12 +78,14 @@ var Ship = /** @class */ (function (_super) {
         return event.getLocation().sub(cc.v2(this.screen.x * 0.5, this.screen.y * 0.5));
     };
     Ship.prototype.update = function (dt) {
-        //moi 0.5s bắn 1 lần
-        if (this.timer <= 0) {
-            this.timer = 0.5;
-            this.shoot();
+        if (this.isShooting) {
+            //mỗi 0.2s bắn 1 lần
+            if (this.timer <= 0) {
+                this.timer += 0.2;
+                this.shoot();
+            }
+            this.timer -= dt;
         }
-        this.timer -= dt;
     };
     Ship.prototype.shoot = function () {
         for (var i = 0; i < this.bulletPoints.length; i++) {
@@ -93,9 +97,25 @@ var Ship = /** @class */ (function (_super) {
     };
     Ship.prototype.onShield = function () {
     };
+    //khi player bắt đầu ấn xuống
     Ship.prototype.onStart = function () {
+        //bắt đầu bắn đạn
+        this.isShooting = true;
+        //tắt tut
     };
     Ship.prototype.onFinish = function () {
+        //tàu k bắn đạn nữa, vụt đi, show UI
+        this.isShooting = false;
+    };
+    //hàm di chuyển sang vị trí mới
+    Ship.prototype.moveTo = function (target, duration, doneAction, isWorldSpace) {
+        // Lấy vị trí target position của node
+        var targetPosition = isWorldSpace ? this.node.getLocalPosition(target) : target;
+        // Tạo một tween để di chuyển node từ vị trí hiện tại đến vị trí mới (position)
+        cc.tween(this.node)
+            .to(duration, { position: targetPosition }, { easing: "linear", })
+            .call(doneAction)
+            .start();
     };
     __decorate([
         property({

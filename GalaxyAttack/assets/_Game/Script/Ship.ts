@@ -25,6 +25,7 @@ export default class Ship extends cc.Component {
     type: [cc.Node],
     tooltip: 'bulletPoints_2'
   })
+
   //list đạn sau khi level up
   public bulletPoints_2: cc.Node[] = [];
 
@@ -34,10 +35,12 @@ export default class Ship extends cc.Component {
   // private player: cc.Node;
   private touchOffset: cc.Vec2;
 
+  //giới hạn khu vực điều khiển
   private screen: cc.Vec2 = new cc.Vec2(cc.view.getVisibleSize().width, cc.view.getVisibleSize().height);
   private clampHorizon: cc.Vec2;// = new cc.Vec2(-0.5, 0.5).mul(this.screen.x);
   private clampVertical: cc.Vec2;// = new cc.Vec2(-0.5, 0.5).mul(this.screen.y);
   
+  private isShooting: boolean = false;
 
   onLoad() {
     // this.player = cc.find('player');
@@ -85,13 +88,17 @@ export default class Ship extends cc.Component {
   private timer: number = 0;
 
   update(dt: number) {
-    //moi 0.5s bắn 1 lần
-    if(this.timer <= 0){
-      this.timer = 0.5;
-      this.shoot();
+ 
+    if (this.isShooting) {
+      //mỗi 0.2s bắn 1 lần
+      if (this.timer <= 0) {
+        this.timer += 0.2;
+        this.shoot();
+      }
+
+      this.timer -= dt;
     }
 
-    this.timer -= dt;
   }
 
   private shoot(){
@@ -108,11 +115,30 @@ export default class Ship extends cc.Component {
     
   }
 
+  //khi player bắt đầu ấn xuống
   public onStart(): void {
-    
+    //bắt đầu bắn đạn
+    this.isShooting = true;
+    //tắt tut
   }
 
   public onFinish(): void {
-    
+    //tàu k bắn đạn nữa, vụt đi, show UI
+    this.isShooting = false;
+  }
+
+  //hàm di chuyển sang vị trí mới
+  public moveTo(target: cc.Vec3, duration: number, doneAction: Function, isWorldSpace: boolean): void {
+    // Lấy vị trí target position của node
+    const targetPosition = isWorldSpace ? this.node.getLocalPosition(target) : target;
+
+    // Tạo một tween để di chuyển node từ vị trí hiện tại đến vị trí mới (position)
+    cc.tween(this.node)
+      .to(duration,
+        { position: targetPosition },
+        { easing: "linear", }
+      )
+      .call(doneAction)
+      .start();
   }
 }

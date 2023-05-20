@@ -14,6 +14,4 @@ const {ccclass, property} = cc._decorator;
 export default class PoolMember extends cc.Component {
     @property({ type: cc.Enum(PoolType) })
     public poolType: PoolType = PoolType.None;
-
-    public i: number = 10;
 }

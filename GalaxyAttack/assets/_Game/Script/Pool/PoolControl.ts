@@ -25,13 +25,12 @@ export class PoolAmount {
 @ccclass
 export default class PoolControl extends cc.Component {
 
-    // @property({
-    //     type: [PoolAmount],
-    //     displayName: "Custom Objects",
-    //     serializable: true,
-    // })
-    @property([PoolAmount])
-    public pools: PoolAmount[] = [];
+    @property({
+        type: Array(PoolAmount),
+        displayName: "Custom Objects",
+        serializable: true,
+    })
+    pools: PoolAmount[] = [];
 
     // @property(cc.Prefab)
     // public prefab: PoolMember = null;

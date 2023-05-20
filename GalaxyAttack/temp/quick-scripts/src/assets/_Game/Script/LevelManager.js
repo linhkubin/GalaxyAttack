@@ -36,10 +36,11 @@ var LevelManager = /** @class */ (function (_super) {
     __extends(LevelManager, _super);
     function LevelManager() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        //
+        //------------------------------------
         _this.ship = null;
         _this.list = [];
         _this.stage_1 = [];
+        _this.stage_2 = [];
         return _this;
     }
     LevelManager_1 = LevelManager;
@@ -54,6 +55,10 @@ var LevelManager = /** @class */ (function (_super) {
         LevelManager_1.ins = this;
     };
     LevelManager.prototype.start = function () {
+        this.onLoadStage_1();
+        this.isBooster = false;
+    };
+    LevelManager.prototype.onLoadStage_1 = function () {
         for (var i = 0; i < this.stage_1.length; i++) {
             var e = SimplePool_1.default.spawnT(SimplePool_1.PoolType.Enemy_1, this.stage_1[i].getWorldPosition().add(cc.Vec3.UP.mul(1000)), 0);
             e.moveTo(this.stage_1[i].getWorldPosition(), 1, true);
@@ -61,16 +66,22 @@ var LevelManager = /** @class */ (function (_super) {
             e.onInit(40);
         }
     };
-    LevelManager.prototype.onLoadStage = function (stage) {
+    LevelManager.prototype.onLoadStage_2 = function () {
     };
     LevelManager.prototype.onEnemyDeath = function (c) {
+        //remove enemy ra khỏi list
         var index = this.list.indexOf(c);
         if (index != -1) {
             this.list.splice(index, 1);
         }
-        console.log(this.list.length);
+        //nếu kết thúc stage thì next stage
         if (this.list.length == 0) {
             console.log("Done");
+        }
+        //enemy đầu tiên chết sẽ tạo booster ra
+        if (!this.isBooster) {
+            this.isBooster = true;
+            SimplePool_1.default.spawn(SimplePool_1.PoolType.Booster, c.node.getWorldPosition());
         }
     };
     var LevelManager_1;
@@ -80,6 +91,9 @@ var LevelManager = /** @class */ (function (_super) {
     __decorate([
         property(cc.Node)
     ], LevelManager.prototype, "stage_1", void 0);
+    __decorate([
+        property(cc.Node)
+    ], LevelManager.prototype, "stage_2", void 0);
     LevelManager = LevelManager_1 = __decorate([
         ccclass
     ], LevelManager);

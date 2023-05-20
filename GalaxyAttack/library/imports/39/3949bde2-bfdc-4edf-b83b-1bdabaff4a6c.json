@@ -34,10 +34,13 @@
     "_components": [
       {
         "__id__": 17
+      },
+      {
+        "__id__": 18
       }
     ],
     "_prefab": {
-      "__id__": 18
+      "__id__": 19
     },
     "_opacity": 255,
     "_color": {
@@ -595,6 +598,17 @@
       "y": 0
     },
     "_radius": 50,
+    "_id": ""
+  },
+  {
+    "__type__": "df312CgxkxLGLplqCwUcFS+",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "poolType": 14,
     "_id": ""
   },
   {
