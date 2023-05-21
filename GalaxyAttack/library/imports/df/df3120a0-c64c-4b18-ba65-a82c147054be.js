@@ -29,7 +29,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var LevelManager_1 = require("./LevelManager");
+var LevelManager_1 = require("./Manager/LevelManager");
 var PoolMember_1 = require("./Pool/PoolMember");
 var SimplePool_1 = require("./Pool/SimplePool");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
@@ -42,13 +42,6 @@ var PowerUp = /** @class */ (function (_super) {
         _this.time = 0;
         _this.threshold = 20;
         return _this;
-        // onCollisionEnter(other: cc.Collider, self: cc.Collider) {
-        //     //đoạn này k cần so sánh group name vì đã chia group contact rồi
-        //     // if (other.node.group == 'player') {
-        //     other.getComponent(Ship).onPowerUp();
-        //     SimplePool.despawn(this);
-        //     // }
-        // }
     }
     PowerUp.prototype.onEnable = function () {
         this.time = 1;

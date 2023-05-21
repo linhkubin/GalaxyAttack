@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import CacheComponent from "./CacheComponent";
 import Character from "./Character";
 import PoolMember from "./Pool/PoolMember";
 import SimplePool, { PoolType } from "./Pool/SimplePool";
@@ -40,8 +41,10 @@ export default class Bullet extends PoolMember {
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
         //đoạn này k cần so sánh group name vì đã chia group contact rồi
         // if (other.node.group == 'enemy') {
-        //TODO: test
-        other.getComponent(Character).onHit(this.damage);
+
+        //cache component để tối ưu game hơn
+        //-> cái này dùng cho game lớn hơn chứ playable chắc k cần lắm
+        CacheComponent.getCharacter(other).onHit(this.damage);
         SimplePool.spawn(PoolType.VFX_Spark, this.node.getWorldPosition());
         SimplePool.despawn(this);
         // }

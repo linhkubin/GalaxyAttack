@@ -70,6 +70,10 @@ var SimplePool = /** @class */ (function () {
     };
     SimplePool.collectAll = function () {
     };
+    //trong scene sẽ cần tạo một node và add poolcontrol vào
+    //list pool control được dùng để khởi tạo số lượng item tương ứng
+    //prefab nào muốn dùng pool sẽ phải kế thừa poolmember
+    //định nghĩa item đó bằng pooltype
     SimplePool.link = new Map;
     SimplePool = __decorate([
         ccclass
@@ -78,7 +82,6 @@ var SimplePool = /** @class */ (function () {
 }());
 exports.default = SimplePool;
 var Pool = /** @class */ (function () {
-    //TODO: test lai
     function Pool(prefab, parentNode, amount) {
         this.list = [];
         this.preload(prefab, parentNode, amount);

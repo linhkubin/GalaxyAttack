@@ -22,6 +22,11 @@ export enum PoolType {
 @ccclass
 export default class SimplePool {
 
+    //trong scene sẽ cần tạo một node và add poolcontrol vào
+    //list pool control được dùng để khởi tạo số lượng item tương ứng
+    //prefab nào muốn dùng pool sẽ phải kế thừa poolmember
+    //định nghĩa item đó bằng pooltype
+
     private static link: Map<PoolType, Pool> = new Map<PoolType, Pool>;
 
     //getter
@@ -82,7 +87,6 @@ class Pool {
         return this.prefab.poolType;
     }
 
-    //TODO: test lai
     constructor(prefab: PoolMember, parentNode: cc.Node, amount: number) {
         this.preload(prefab, parentNode, amount);
     }

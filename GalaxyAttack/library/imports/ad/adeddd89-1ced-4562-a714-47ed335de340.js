@@ -29,6 +29,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var SoundManager_1 = require("./Manager/SoundManager");
+var UIManager_1 = require("./Manager/UIManager");
 var SimplePool_1 = require("./Pool/SimplePool");
 var Utilities_1 = require("./Utilities");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
@@ -40,6 +42,8 @@ var Ship = /** @class */ (function (_super) {
         _this.bulletPoints_2 = [];
         //list đạn bắn ra  
         _this.bulletPoints = [];
+        _this.ripple = null;
+        _this.shield = null;
         //giới hạn khu vực điều khiển
         _this.screen = new cc.Vec2(cc.view.getVisibleSize().width, cc.view.getVisibleSize().height);
         _this.isShooting = false;
@@ -64,6 +68,7 @@ var Ship = /** @class */ (function (_super) {
     //Move
     //bat dau an xuong
     Ship.prototype.onTouchBegan = function (event) {
+        this.onStart();
         this.touchOffset = Utilities_1.default.vec3ToVec2(this.node.position).subtract(this.getMousePoint(event));
     };
     //di chuyen chuot
@@ -87,25 +92,45 @@ var Ship = /** @class */ (function (_super) {
             this.timer -= dt;
         }
     };
+    //bắn đạn
     Ship.prototype.shoot = function () {
+        SoundManager_1.default.Ins.PlayClip(SoundManager_1.AudioType.FX_Bullet);
         for (var i = 0; i < this.bulletPoints.length; i++) {
             SimplePool_1.default.spawn(SimplePool_1.PoolType.Bullet_1, this.bulletPoints[i].getWorldPosition(), this.bulletPoints[i].angle).onInit(10);
         }
     };
     Ship.prototype.onPowerUp = function () {
         this.bulletPoints = this.bulletPoints_2;
+        this.shield.active = true;
+        SoundManager_1.default.Ins.PlayClip(SoundManager_1.AudioType.FX_Booster);
     };
-    Ship.prototype.onShield = function () {
+    Ship.prototype.onAwake = function () {
+        var _this = this;
+        this.moveTo(cc.Vec3.UP.mul(-500), 1, function () {
+            //bật tut
+            //bật fx
+            _this.ripple.active = true;
+            UIManager_1.default.Ins.onOpen(0);
+        }, false);
     };
     //khi player bắt đầu ấn xuống
     Ship.prototype.onStart = function () {
         //bắt đầu bắn đạn
-        this.isShooting = true;
-        //tắt tut
+        if (!this.isShooting) {
+            this.isShooting = true;
+            //tắt tut
+            //tắt fx
+            this.ripple.active = false;
+            UIManager_1.default.Ins.onClose(0);
+        }
     };
     Ship.prototype.onFinish = function () {
-        //tàu k bắn đạn nữa, vụt đi, show UI
+        var _this = this;
+        //tàu k bắn đạn nữa, vụt đi
         this.isShooting = false;
+        this.moveTo(this.node.position.add(cc.Vec3.UP.mul(-200)), 1, function () { return _this.moveTo(_this.node.position.add(cc.Vec3.UP.mul(10000)), 1, 
+        //show UI end card
+        function () { return UIManager_1.default.Ins.onOpen(1); }, false); }, false);
     };
     //hàm di chuyển sang vị trí mới
     Ship.prototype.moveTo = function (target, duration, doneAction, isWorldSpace) {
@@ -129,6 +154,12 @@ var Ship = /** @class */ (function (_super) {
             tooltip: 'bulletPoints_2'
         })
     ], Ship.prototype, "bulletPoints_2", void 0);
+    __decorate([
+        property(cc.Node)
+    ], Ship.prototype, "ripple", void 0);
+    __decorate([
+        property(cc.Node)
+    ], Ship.prototype, "shield", void 0);
     Ship = __decorate([
         ccclass
     ], Ship);

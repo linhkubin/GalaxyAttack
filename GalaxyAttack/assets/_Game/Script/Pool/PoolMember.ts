@@ -5,8 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
-import SimplePool from "./SimplePool";
-import { PoolType } from "./SimplePool";
+import SimplePool, { PoolType } from "./SimplePool";
 
 const {ccclass, property} = cc._decorator;
 

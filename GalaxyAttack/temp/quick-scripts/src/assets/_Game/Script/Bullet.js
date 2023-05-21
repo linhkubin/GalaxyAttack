@@ -29,7 +29,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var Character_1 = require("./Character");
+var CacheComponent_1 = require("./CacheComponent");
 var PoolMember_1 = require("./Pool/PoolMember");
 var SimplePool_1 = require("./Pool/SimplePool");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
@@ -59,8 +59,9 @@ var Bullet = /** @class */ (function (_super) {
     Bullet.prototype.onCollisionEnter = function (other, self) {
         //đoạn này k cần so sánh group name vì đã chia group contact rồi
         // if (other.node.group == 'enemy') {
-        //TODO: test
-        other.getComponent(Character_1.default).onHit(this.damage);
+        //cache component để tối ưu game hơn
+        //-> cái này dùng cho game lớn hơn chứ playable chắc k cần lắm
+        CacheComponent_1.default.getCharacter(other).onHit(this.damage);
         SimplePool_1.default.spawn(SimplePool_1.PoolType.VFX_Spark, this.node.getWorldPosition());
         SimplePool_1.default.despawn(this);
         // }

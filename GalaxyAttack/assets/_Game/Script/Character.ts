@@ -41,12 +41,4 @@ export default class Character extends PoolMember {
         // this.onDeathAction(this);
     }
 
-    // //test
-    // protected onLoad(): void {
-    //     this.onDeathAction = this.onEnemyDeath;
-    // }
-
-    // public onEnemyDeath(e : Character): void{
-
-    // }
 }

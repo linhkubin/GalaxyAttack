@@ -6,7 +6,8 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import Character from "./Character";
-import LevelManager from "./LevelManager";
+import LevelManager from "./Manager/LevelManager";
+import SoundManager, { AudioType } from "./Manager/SoundManager";
 import SimplePool, { PoolType } from "./Pool/SimplePool";
 
 const {ccclass, property} = cc._decorator;
@@ -26,6 +27,7 @@ export default class Enemy extends Character {
         LevelManager.Ins.onEnemyDeath(this);
         SimplePool.spawn(PoolType.VFX_Explore, this.node.getWorldPosition(), 0);
         SimplePool.despawn(this);
+        SoundManager.Ins.PlayClip(AudioType.FX_EnemyDie);
     }
 
     //hàm di chuyển sang vị trí mới

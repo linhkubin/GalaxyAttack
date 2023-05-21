@@ -5,7 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
-import LevelManager from "./LevelManager";
+import LevelManager from "./Manager/LevelManager";
 import PoolMember from "./Pool/PoolMember";
 import SimplePool from "./Pool/SimplePool";
 
@@ -70,13 +70,4 @@ export default class PowerUp extends PoolMember {
         SimplePool.despawn(this);
     }
 
-
-    // onCollisionEnter(other: cc.Collider, self: cc.Collider) {
-
-    //     //đoạn này k cần so sánh group name vì đã chia group contact rồi
-    //     // if (other.node.group == 'player') {
-    //     other.getComponent(Ship).onPowerUp();
-    //     SimplePool.despawn(this);
-    //     // }
-    // }
 }

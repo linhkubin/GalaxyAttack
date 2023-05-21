@@ -30,7 +30,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var Character_1 = require("./Character");
-var LevelManager_1 = require("./LevelManager");
+var LevelManager_1 = require("./Manager/LevelManager");
+var SoundManager_1 = require("./Manager/SoundManager");
 var SimplePool_1 = require("./Pool/SimplePool");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var Enemy = /** @class */ (function (_super) {
@@ -49,6 +50,7 @@ var Enemy = /** @class */ (function (_super) {
         LevelManager_1.default.Ins.onEnemyDeath(this);
         SimplePool_1.default.spawn(SimplePool_1.PoolType.VFX_Explore, this.node.getWorldPosition(), 0);
         SimplePool_1.default.despawn(this);
+        SoundManager_1.default.Ins.PlayClip(SoundManager_1.AudioType.FX_EnemyDie);
     };
     //hàm di chuyển sang vị trí mới
     Enemy.prototype.moveTo = function (target, duration, isWorldSpace) {
