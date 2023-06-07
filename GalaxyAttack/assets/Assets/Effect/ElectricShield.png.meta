@@ -9,7 +9,16 @@
   "packable": true,
   "width": 244,
   "height": 244,
-  "platformSettings": {},
+  "platformSettings": {
+    "web": {
+      "formats": [
+        {
+          "name": "png",
+          "quality": 80
+        }
+      ]
+    }
+  },
   "subMetas": {
     "ElectricShield": {
       "ver": "1.0.4",
@@ -20,10 +29,10 @@
       "rotated": false,
       "offsetX": -1.5,
       "offsetY": -0.5,
-      "trimX": 5,
-      "trimY": 9,
-      "width": 231,
-      "height": 227,
+      "trimX": 6,
+      "trimY": 10,
+      "width": 229,
+      "height": 225,
       "rawWidth": 244,
       "rawHeight": 244,
       "borderTop": 0,
